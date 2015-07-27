@@ -44,11 +44,11 @@ class StressHandler(webapp2.RequestHandler):
         self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/stress.html')
-        actions=['1',
-                 '2',
-                 '3',
-                 '4',
-                 '5']
+        actions=['Get a massage.',
+                 'Go for a run.',
+                 'Pet a dog and/or a cat!',
+                 'Make yourself a nice cup of tea.',
+                 'Soak in a warm bath.']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
@@ -57,11 +57,11 @@ class HomeHandler(webapp2.RequestHandler):
         self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/home.html')
-        actions=['1',
-                 '2',
-                 '3',
-                 '4',
-                 '5']
+        actions=['Make a fort out of your cushions, pillows, and blankets!',
+                 'Take a nap!',
+                 'Call a friend.',
+                 'Bake something for yourself and/or friends.',
+                 'Plan a sleepover!']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 class ExerciseHandler(webapp2.RequestHandler):
@@ -69,7 +69,7 @@ class ExerciseHandler(webapp2.RequestHandler):
         self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/exercise.html')
-        actions=['1',
+        actions=['Bring a workout friend!',
                  '2',
                  '3',
                  '4',
@@ -108,7 +108,7 @@ class ChillHandler(webapp2.RequestHandler):
         self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
-        actions=['1',
+        actions=['Read a book.',
                  '2',
                  '3',
                  '4',
