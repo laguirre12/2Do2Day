@@ -8,7 +8,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.di
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('templates/index.html')
-        self.response.write(template.render(template_values))
+        self.response.write(template.render())
 
 class WorkHandler(webapp2.RequestHandler):
     def get(self):
