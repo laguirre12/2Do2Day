@@ -87,7 +87,7 @@ class SchoolHandler(webapp2.RequestHandler):
                  '3',
                  '4',
                  '5']
-        self.response.write(template.render({"phrase":}))
+        self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
 class CrazyHandler(webapp2.RequestHandler):
