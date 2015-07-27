@@ -54,46 +54,66 @@ class StressHandler(webapp2.RequestHandler):
 
 class HomeHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('templates/home.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/home.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        actions=['1',
+                 '2',
+                 '3',
+                 '4',
+                 '5']
+        self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 class ExerciseHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('templates/exercise.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/exercise.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        actions=['1',
+                 '2',
+                 '3',
+                 '4',
+                 '5']
+        self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
 class SchoolHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('templates/school.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/school.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        actions=['1',
+                 '2',
+                 '3',
+                 '4',
+                 '5']
+        self.response.write(template.render({"phrase":}))
 
 
 class CrazyHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('templates/crazy.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/crazy.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        actions=['1',
+                 '2',
+                 '3',
+                 '4',
+                 '5']
+        self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
 class ChillHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        actions=['1',
+                 '2',
+                 '3',
+                 '4',
+                 '5']
+        self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
 app = webapp2.WSGIApplication([
