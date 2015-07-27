@@ -32,8 +32,8 @@ class MusicHandler(webapp2.RequestHandler):
 
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/music.html')
-        actions=['start singing for fun',
-                 'try to learn how to play an instrument']
+        actions=['Start singing for fun!',
+                 'Try to learn how to play an instrument.']
         num=random.randint(0,10)
         if not (num==0 or num==1):
             genres=open("genre_file.txt","r")
@@ -44,11 +44,11 @@ class MusicHandler(webapp2.RequestHandler):
             logging.info(list_genres[num2])
             try:
                 self.response.write(template.render({
-                "phrase": 'listen to ' +list_genres[num2]+" music"
+                "phrase": 'Listen to ' +list_genres[num2]+" music!"
                 }))
             except:
                 self.response.write(template.render({
-                "phrase": 'listen to J-Pop'+" music"
+                "phrase": 'Listen to J-Pop'+" music!"
                 }))
         else:
             self.response.write(template.render({"phrase":actions[num]}))
