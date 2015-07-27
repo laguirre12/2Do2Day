@@ -99,7 +99,7 @@ class SchoolHandler(webapp2.RequestHandler):
         actions=['Make a study group with your friends.',
                  'Join a new type of club!',
                  'Explore the campus.',
-                 "Talk to a teacher/professor you're unfamiliar with",
+                 "Talk to a teacher/professor you're unfamiliar with.",
                  'Talk to a new student.']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
