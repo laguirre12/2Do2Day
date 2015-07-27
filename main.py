@@ -41,11 +41,15 @@ class MusicHandler(webapp2.RequestHandler):
 
 class StressHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('templates/stress.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/stress.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        actions=['1',
+                 '2',
+                 '3',
+                 '4',
+                 '5']
+        self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
 class HomeHandler(webapp2.RequestHandler):
