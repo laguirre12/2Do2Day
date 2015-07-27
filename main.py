@@ -96,11 +96,11 @@ class SchoolHandler(webapp2.RequestHandler):
         self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/school.html')
-        actions=['1',
-                 '2',
-                 '3',
-                 '4',
-                 '5']
+        actions=['Make a study group with your friends.',
+                 'Join a new type of club!',
+                 'Explore the campus.',
+                 "Talk to a teacher/professor you're unfamiliar with",
+                 'Talk to a new student.']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
@@ -109,11 +109,11 @@ class CrazyHandler(webapp2.RequestHandler):
         self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/crazy.html')
-        actions=['1',
-                 '2',
-                 '3',
-                 '4',
-                 '5']
+        actions=['Go skydiving!',
+                 'Take a hike.',
+                 'Climb a mountain.',
+                 'Swim with dolphins.',
+                 'Go bungee jumping!']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
@@ -123,10 +123,10 @@ class ChillHandler(webapp2.RequestHandler):
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
         actions=['Read a book.',
-                 '2',
-                 '3',
-                 '4',
-                 '5']
+                 'Watch something on Netflix.',
+                 'Get some ice (ba-dum-tss).',
+                 'Go watch a movie.',
+                 'Do yoga.']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
