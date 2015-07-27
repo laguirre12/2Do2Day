@@ -18,7 +18,13 @@ class WorkHandler(webapp2.RequestHandler):
         self.response.write(template.render({"phrase":"eventually send in"}))
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
-        actions=["1","2","3"]
+        actions=["Go to lunch with a coworker that you're not familiar with and get to know them!",
+                 "Compliment your coworkers!",
+                 "During your break, walk around the office.",
+                 "Organize your workspace.",
+                 "Remember to sit or stand up straight and not slouch as much as you can.",
+                 "Try meditating/relaxing by sitting still for 2-5 minutes during your break.",
+                 ]
         #
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
