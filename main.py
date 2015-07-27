@@ -23,8 +23,7 @@ class WorkHandler(webapp2.RequestHandler):
                  "During your break, walk around the office.",
                  "Organize your workspace.",
                  "Remember to sit or stand up straight and not slouch as much as you can.",
-                 "Try meditating/relaxing by sitting still for 2-5 minutes during your break.",
-                 ]
+                 "Try meditating/relaxing by sitting still for 2-5 minutes during your break.",]
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 class MusicHandler(webapp2.RequestHandler):
@@ -33,7 +32,11 @@ class MusicHandler(webapp2.RequestHandler):
 
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/music.html')
-        actions=['listen to (insert artist/song here)','listen to (insert artist/song here)','listen to (insert artist/song here)','start singing for fun','try to learn how to play an instrument']
+        actions=['listen to (insert artist/song here)',
+                 'listen to (insert artist/song here)',
+                 'listen to (insert artist/song here)',
+                 'start singing for fun',
+                 'try to learn how to play an instrument']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 class StressHandler(webapp2.RequestHandler):
