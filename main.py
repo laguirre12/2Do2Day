@@ -13,12 +13,12 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('work.html')
+        template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.write(template.render(template_values))
 
 class WorkHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('work.html')
+        template = JINJA_ENVIRONMENT.get_template('templates/work.html')
         self.response.write(template.render({"phrase":"eventually send in"}))
 
 
