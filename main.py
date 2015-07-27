@@ -9,18 +9,15 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-
-
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('index.html')
+        template = JINJA_ENVIRONMENT.get_template('templates/index.html')
         self.response.write(template.render(template_values))
 
 class WorkHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
         self.response.write(template.render({"phrase":"eventually send in"}))
-
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
