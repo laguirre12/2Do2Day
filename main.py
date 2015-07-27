@@ -32,12 +32,26 @@ class MusicHandler(webapp2.RequestHandler):
 
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/music.html')
-        actions=['listen to (insert artist/song here)',
-                 'listen to (insert artist/song here)',
-                 'listen to (insert artist/song here)',
-                 'start singing for fun',
+        actions=['start singing for fun',
                  'try to learn how to play an instrument']
-        self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
+        num=random.randint(0,10)
+        if not (num==0 or num==1):
+            genres=open("genre_file.txt","r")
+            list_genres=[]
+            for line in genres:
+                list_genres.append(line)
+            num2=random.randint(0,len(list_genres)-1)
+            logging.info(list_genres[num2])
+            try:
+                self.response.write(template.render({
+                "phrase": 'listen to ' +list_genres[num2]+" music"
+                }))
+            except:
+                self.response.write(template.render({
+                "phrase": 'listen to J-Pop'+" music"
+                }))
+        else:
+            self.response.write(template.render({"phrase":actions[num]}))
 
 class StressHandler(webapp2.RequestHandler):
     def get(self):
@@ -69,11 +83,11 @@ class ExerciseHandler(webapp2.RequestHandler):
         self.post()
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/exercise.html')
-        actions=['Bring a workout friend!',
-                 '2',
-                 '3',
-                 '4',
-                 '5']
+        actions=['Get a friend to be your work out parter so you can both motivate each other.',
+                 'Try making yourself a protein shake!',
+                 'Try playing a sport with your friends regularly so you have more motivation for working out.',
+                 'If you are used to exercising in a gym try exercising outside the gym for a change or vise versa.',
+                 'Try changing your exercise routine (try an early morning exercise routine or late night routine).']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
