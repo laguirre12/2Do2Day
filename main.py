@@ -14,8 +14,8 @@ class MainHandler(webapp2.RequestHandler):
 
 class WorkHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('templates/work.html')
-        self.response.write(template.render({"phrase":"eventually send in"}))
+        self.post()
+        
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
         actions=["Go to lunch with a coworker that you're not familiar with and get to know them!",
