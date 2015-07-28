@@ -1,6 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Questrial);
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
-
+#index #left{
+  position: absolute;
+  left: 1%;
+  width: 3%;
+}
 
 #index img{
   position: relative;
