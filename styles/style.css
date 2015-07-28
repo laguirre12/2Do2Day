@@ -1,6 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Questrial);
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
 
+#index{
+  background-color: rgb(194, 235, 255);
+}
+
 #index img{
   position: relative;
   width: 26%;
@@ -9,12 +13,27 @@
 
 #index table{
   text-align: center;
-  position: relative;
-  width: 50%;
-  left: 25%;
+  position: absolute;
+  width: 74%;
+  left: 13%;
   font-size: 25px;
-  font-family: 'Lato', sans-serif;
+  table-layout: fixed;
+  height: 300px;
+  border-spacing: 20px;
 }
+
+#index td {
+  font-family: 'Lato', sans-serif;
+  border: 2px black solid;
+  border-radius: 10px;
+  height: 200px;
+  cursor: pointer;
+}
+
+#index td:hover{
+  border-color: rgb(253,221,160);
+}
+
 #index a:link{
   text-decoration: none;
   color: black;
