@@ -48,9 +48,12 @@
 #unsorted_list {
     list-style-type: none;
     margin: 0;
-    padding: 0;
     overflow: hidden;
-    padding-left: 150px;
+    padding-left: 175px;
+    bottom 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
 }
 
 .List_item {
