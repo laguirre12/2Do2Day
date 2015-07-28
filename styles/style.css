@@ -1,9 +1,20 @@
-#index h1 {
-  margin: 0;
-  padding: 0;
-  font-family: 'Oranienbaum', serif;
-  font-size: 100px;
+#button {
+  width: 50px;
+  height: 50px;
+  padding:10px;
+  background-color: blue;
+  border: 1px solid pink;
+  color:green;
+  text-decoration:none;
+}
+#small-button {
+  padding-top: 16px;
+  background-color: blue;
+  border: 0px;
+  color:orange;
+  text-decoration:none;
   text-align: center;
-  color: rgb(115,160,137);
-  margin-top: 12.5%;
+}
+table{
+  transform: translateY(200%);
 }
