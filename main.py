@@ -14,9 +14,6 @@ class MainHandler(webapp2.RequestHandler):
 
 class WorkHandler(webapp2.RequestHandler):
     def get(self):
-        self.post()
-
-    def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
         actions=["Go to lunch with a coworker that you're not familiar with and get to know them!",
                  "Compliment your coworkers!",
@@ -28,9 +25,6 @@ class WorkHandler(webapp2.RequestHandler):
 
 class MusicHandler(webapp2.RequestHandler):
     def get(self):
-        self.post()
-
-    def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/music.html')
         actions=['Start singing for fun!',
                  'Try to learn how to play an instrument.']
@@ -55,8 +49,6 @@ class MusicHandler(webapp2.RequestHandler):
 
 class StressHandler(webapp2.RequestHandler):
     def get(self):
-        self.post()
-    def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/stress.html')
         actions=['Get a massage.',
                  'Go for a run.',
@@ -68,8 +60,6 @@ class StressHandler(webapp2.RequestHandler):
 
 class HomeHandler(webapp2.RequestHandler):
     def get(self):
-        self.post()
-    def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/home.html')
         actions=['Make a fort out of your cushions, pillows, and blankets!',
                  'Take a nap!',
@@ -80,8 +70,6 @@ class HomeHandler(webapp2.RequestHandler):
 
 class ExerciseHandler(webapp2.RequestHandler):
     def get(self):
-        self.post()
-    def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/exercise.html')
         actions=['Get a friend to be your work out parter so you can both motivate each other.',
                  'Try making yourself a protein shake!',
@@ -93,8 +81,6 @@ class ExerciseHandler(webapp2.RequestHandler):
 
 class SchoolHandler(webapp2.RequestHandler):
     def get(self):
-        self.post()
-    def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/school.html')
         actions=['Make a study group with your friends.',
                  'Join a new type of club!',
@@ -106,8 +92,6 @@ class SchoolHandler(webapp2.RequestHandler):
 
 class CrazyHandler(webapp2.RequestHandler):
     def get(self):
-        self.post()
-    def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/crazy.html')
         actions=['Go skydiving!',
                  'Take a hike.',
@@ -119,8 +103,6 @@ class CrazyHandler(webapp2.RequestHandler):
 
 class ChillHandler(webapp2.RequestHandler):
     def get(self):
-        self.post()
-    def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
         actions=['Read a book.',
                  'Watch something on Netflix.',
