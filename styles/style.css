@@ -2,7 +2,10 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
 
 #index{
-  background-color: rgb(194, 235, 255);
+  background-image: url('/images/clouds.jpg');
+  background-repeat: no-repeat;
+  background-position: center-bottom;
+  background-size: cover;
 }
 
 #index img{
