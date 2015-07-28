@@ -52,7 +52,6 @@
     padding-left: 175px;
     bottom 0;
     position: fixed;
-    width: 100%;
     bottom: 0px;
 }
 
@@ -70,6 +69,7 @@ a.bar:link, a.bar:visited {
     padding: 4px;
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 20px;
 }
 
 a.bar:hover, a.bar:active {
