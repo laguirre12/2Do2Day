@@ -1,29 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
 #index img{
   position: relative;
   width: 26%;
   left: 37%;
 }
 
-#small-button {
-  width: 100px;
-  height: 75px;
-  padding:10px;
-  color:green;
-  text-decoration:none;
-}
-
-/*#small-button {
-  padding-top: 10px;
-  background-color: blue;
-  border: 0px;
-  color:orange;
-  text-decoration:none;
+#index table{
   text-align: center;
-}*/
-
-table{
   position: relative;
-  /*transform: translateY(200%); */
   width: 50%;
   left: 25%;
+  font-size: 25px;
+  font-family: 'Lato', sans-serif;
+}
+#index a:link{
+  text-decoration: none;
+  color: black;
+}
+
+#index a:visited{
+  text-decoration: none;
+  color: black;
 }
