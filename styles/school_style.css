@@ -10,7 +10,8 @@
 
 #index table{
   text-align: center;
-  position: relative;
+  position: absolute;
+  bottom: 0px;
   width: 50%;
   left: 25%;
   font-size: 25px;
