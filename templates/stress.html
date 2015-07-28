@@ -2,12 +2,19 @@
 <html>
   <head>
     <title>Stress</title>
+    <link href="/styles/stress_style.css" rel="stylesheet" type="text/css">
+
     <!-- Pull in our CSS and JS.
     <link href='/css/style.css' rel='stylesheet' type='text/css'>
     <script src="/js/ajax.js"></script> -->
   </head>
-  <body>
+  <body id='index'>
+
+      <img width:"50" src="images/logo.png">
+
+    <center>
     <h1>Stress</h1>
+
     <p>{{phrase}}</p>
     <form method='get' action='/stress'>
       <input type='submit' value='Refresh'>
@@ -15,6 +22,7 @@
     <form method='get' action='/'>
       <input type='submit' value='Return to Main'>
     </form>
+  </center>
 
     <table>
       <tr>

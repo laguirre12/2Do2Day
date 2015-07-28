@@ -20,9 +20,14 @@
 #index a:link{
   text-decoration: none;
   color: black;
+  bottom: 0px;
 }
 
 #index a:visited{
   text-decoration: none;
   color: black;
+}
+
+table{
+  bottom: 0px;
 }
