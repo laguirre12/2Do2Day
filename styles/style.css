@@ -3,8 +3,6 @@
 
 #index{
   background-image: url('/images/clouds.jpg');
-  background-repeat: no-repeat;
-  background-position: center-bottom;
   background-size: cover;
 }
 
@@ -31,6 +29,7 @@
   border-radius: 10px;
   height: 200px;
   cursor: pointer;
+  background-color: white;
 }
 
 #index td:hover{
