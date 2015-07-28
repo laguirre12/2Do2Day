@@ -4,27 +4,26 @@
   left: 37%;
 }
 
-#button {
+#small-button {
   width: 100px;
   height: 75px;
   padding:10px;
-  background-color: blue;
   color:green;
   text-decoration:none;
 }
 
-#small-button {
+/*#small-button {
   padding-top: 10px;
   background-color: blue;
   border: 0px;
   color:orange;
   text-decoration:none;
   text-align: center;
-}
+}*/
+
 table{
   position: relative;
   /*transform: translateY(200%); */
   width: 50%;
   left: 25%;
-  border-style: solid;
 }
