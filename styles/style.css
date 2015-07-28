@@ -1,15 +1,20 @@
+#index img{
+  position: relative;
+  width: 26%;
+  left: 37%;
+}
 
 #button {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 75px;
   padding:10px;
   background-color: blue;
-  border: 1px solid pink;
   color:green;
   text-decoration:none;
 }
+
 #small-button {
-  padding-top: 16px;
+  padding-top: 10px;
   background-color: blue;
   border: 0px;
   color:orange;
@@ -17,10 +22,9 @@
   text-align: center;
 }
 table{
-  transform: translateY(200%);
-
-#index img{
   position: relative;
-  width: 26%;
-  left: 37%;
+  /*transform: translateY(200%); */
+  width: 50%;
+  left: 25%;
+  border-style: solid;
 }
