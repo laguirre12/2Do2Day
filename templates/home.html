@@ -14,11 +14,11 @@
 
       <center>
     <h1>Stay Home</h1>
-
-    <p>{{phrase}}</p>
-    <!--<form method='get' action='/home'>
-      <input type='submit' value='Refresh'>
-    </form>-->
+    {% if phrase == 'Watch cute cat videos on ' %}
+      <p>{{phrase}}<a id="Link" href="https://www.youtube.com/" target="_blank">YouTube</a>!!!!</p>
+    {% else %}
+      <p>{{phrase}}</p>
+    {% endif %}
   </center>
 
   <a href="/"><img id="left" src="images/back_arrow.png"></a>

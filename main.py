@@ -87,7 +87,7 @@ class HomeHandler(webapp2.RequestHandler):
                  'Try to find Narnia!',
                  'Have a costume Party w/ friends! (not just a Halloween activity)',
                  'Read a book! (JK Just watch a movie instead)',
-                 'Watch cute cat videos on YouTube!!!!',
+                 'Watch cute cat videos on ',
                  'Bake Cookies! (props for sharing them with friends)']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
@@ -105,7 +105,7 @@ class ExerciseHandler(webapp2.RequestHandler):
                  'Try listening/watching to a podcast or a TV show while exercising.',
                  'Try joining a workout class or an exercise group.',
                  'Challenge yourself!!!',
-                 'Watch some workout motivation videos on YouTube before starting.']
+                 'Watch some workout motivation videos on ']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
