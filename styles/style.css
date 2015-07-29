@@ -25,11 +25,8 @@
 
 #index td {
   font-family: 'Lato', sans-serif;
-  border: 2px black solid;
-  border-radius: 10px;
   height: 200px;
   cursor: pointer;
-  background-color: white;
 }
 
 #index td:hover{
@@ -46,6 +43,21 @@
   color: black;
 }
 
+#work {
+  background-image: url('/images/suitcase.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(0,167,157) solid;
+  border-radius: 10px;
+}
+
+#exercise {
+  background-image: url('/images/exercise.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(251,175,63) solid;
+  border-radius: 10px;
+}
 /*--------------------------------------------------------------------*/
 #unsorted_list {
     list-style-type: none;
