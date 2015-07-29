@@ -17,19 +17,19 @@ function make_about_Appear()
 console.log("hello");
 
 $(document).ready(function(){
-  pos = $(".button").position()
-  $(".button").mouseover(function(){
+  pos = $("#work").position()
+  $("#work").mouseover(function(){
       console.log("hello2");
       /*$("#index table").animate({bottom: '150px'}); */
-      $(".button").animate({bottom: '150px'});
+      $("#work").animate({bottom: '15px'});
   });
 });
 
 $(document).ready(function(){
-  pos = $(".button").position()
-  $(".button").mouseleave(function(){
+  pos = $("#work").position()
+  $("#work").mouseleave(function(){
       console.log("hello3");
       /*$("#index table").animate({bottom: '100px'});*/
-      $(".button").animate({bottom: ("100px")});
+      $("#work").animate({bottom: ("10px")});
   });
 });
