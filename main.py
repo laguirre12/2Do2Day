@@ -165,7 +165,6 @@ class ChillHandler(webapp2.RequestHandler):
                  'Bowling??']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
-
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/work',WorkHandler),
