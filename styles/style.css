@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Questrial);
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 
 #index{
   background-image: url('/images/background.png');
@@ -19,7 +20,6 @@
   left: 13%;
   font-size: 25px;
   table-layout: fixed;
-  height: 300px;
   border-spacing: 20px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 #index td:hover{
-  border-color: rgb(253,221,160);
+  border-color: white;
 }
 
 #index a:link{
@@ -62,9 +62,10 @@
 }
 
 a.bar:link, a.bar:visited {
+    font-family: 'Oswald', sans-serif;
     display: block;
     width: 350px;
-    font-weight: bold;
+    font-weight: 400;
     color: #FFFFFF;
     background-color: #98bf21;
     text-align: center;
