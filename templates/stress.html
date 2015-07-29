@@ -16,6 +16,10 @@
     <h1>Stress</h1>
 
     <p>{{phrase}}</p>
+
+      {% if phrase == "Get a massage." %}
+        <a href="http://massagenetwork.com/" target = "_blank">click here for massage link</a>
+      {% endif %}
     <form method='get' action='/stress'>
       <input type='submit' value='Refresh'>
     </form>
