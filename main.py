@@ -137,7 +137,7 @@ class CrazyHandler(webapp2.RequestHandler):
                  'If your brave, try doing Shark cage diving.',
                  'Go run on the Great Wall of China!!',
                  'Start a conversation with a random person! (and be nice!!)',
-                 'Go to a concert and be determined to meet the artist.'
+                 'Go to a concert and be determined to meet the artist.',
                  'Go see the Great Pyramid of Giza!',
                  'Dress up nice for no reason at all!',
                  'Fly a kite??',
