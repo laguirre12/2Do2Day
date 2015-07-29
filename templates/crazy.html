@@ -3,29 +3,23 @@
   <head>
     <title>Something Crazy</title>
     <link href="/styles/action_style.css" rel="stylesheet" type="text/css">
-
-    <!-- Pull in our CSS and JS.
-    <link href='/css/style.css' rel='stylesheet' type='text/css'>
-    <script src="/js/ajax.js"></script> -->
   </head>
-  <body id='index'>
+  <body>
 
-    <a href="/"><img width:"50" src="images/logo.png"></a>
+    <a href="/"><img src="images/toucan.png"></a>
 
-    <center>
-    <h1>Something Crazy</h1>
-
-    <p>{{phrase}}</p>
-
-    {% if phrase == "Go to the zoo!!!" %}
-      <a href="http://www.visitzooparks.com/" target = "_blank">click here for zoo park link</a>
-    {% endif %}
-
-  
-  <!--  <form method='get' action='/crazy'>
-      <input type='submit' value='Refresh'>
-    </form>-->
-  </center>
+    <div>
+      <h1>Something Crazy</h1>
+      {% if phrase== 'Go skydiving!' %}
+        <p>{{phrase}} (check <a id="Link" href="http://www.skydiving.com/" target="_blank">here</a> for more information)</p>
+      {% elif phrase== 'Take a hike.' %}
+        <p>{{phrase}} (check <a id="Link" href="http://www.americanhiking.org/" target="_blank">here</a> for more information)</p>
+      {% elif phrase== 'Swim with dolphins.' %}
+        <p>{{phrase}} (check <a id="Link" href="http://www.minitime.com/trip-tips/6-Places-to-Swim-with-Dolphins-article" target="_blank">here</a> for more information)</p>
+      {% else %}
+        <p>{{phrase}}</p>
+      {% endif %}
+    </div>
 
   <a href="/"><img id="left" src="images/back_arrow.png"></a>
   <a href="/crazy"><img id="refresh" src="images/refresh.png"></a>

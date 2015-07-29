@@ -8,21 +8,17 @@
     <link href='/css/style.css' rel='stylesheet' type='text/css'>
     <script src="/js/ajax.js"></script> -->
   </head>
-  <body id='index'>
+  <body>
 
-    <a href="/"><img width:"50" src="images/logo.png"></a>
+    <a href="/"><img src="images/toucan.png"></a>
+    <div>
+      <h1>Just Chillin'</h1>
+      <p>{{phrase}}</p>
+        {% if phrase == "Watch something on Netflix." %}
+          <a href="https://www.netflix.com/" target = "_blank">click here for Netflix link</a>
+        {% endif %}
+    </div>
 
-    <center>
-    <h1>Just Chillin'</h1>
-
-    <p>{{phrase}}</p>
-    {% if phrase == "Watch something on Netflix." %}
-      <a href="https://www.netflix.com/" target = "_blank">click here for Netflix link</a>
-    {% endif %}
-  <!--  <form method='get' action='/chill'>
-      <input type='submit' value='Refresh'>
-    </form>-->
-  </center>
   <a href="/"><img id="left" src="images/back_arrow.png"></a>
   <a href="/chill"><img id="refresh" src="images/refresh.png"></a>
 
