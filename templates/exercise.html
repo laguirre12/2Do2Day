@@ -8,19 +8,17 @@
     <link href='/css/style.css' rel='stylesheet' type='text/css'>
     <script src="/js/ajax.js"></script> -->
   </head>
-  <body id='index'>
+  <body>
 
-    <a href="/"><img width:"50" src="images/logo.png"></a>
-    <center>
-    <h1>Exercise</h1>
-
-    {% if phrase == 'Watch some workout motivation videos on ' %}
-      <p>{{phrase}}<a id="Link" href="https://www.youtube.com/" target="_blank">YouTube</a>.</p>
-    {% else %}
-      <p>{{phrase}}</p>
-    {% endif %}
-
-  </center>
+    <a href="/"><img src="images/toucan.png"></a>
+    <div>
+      <h1>Exercise</h1>
+        {% if phrase == 'Watch some workout motivation videos on ' %}
+          <p>{{phrase}}<a id="Link" href="https://www.youtube.com/" target="_blank">YouTube</a>.</p>
+        {% else %}
+          <p>{{phrase}}</p>
+        {% endif %}
+    </div>
 
   <a href="/"><img id="left" src="images/back_arrow.png"></a>
   <a href="/exercise"><img id="refresh" src="images/refresh.png"></a>

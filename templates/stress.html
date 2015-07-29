@@ -8,22 +8,16 @@
     <link href='/css/style.css' rel='stylesheet' type='text/css'>
     <script src="/js/ajax.js"></script> -->
   </head>
-  <body id='index'>
+  <body>
 
-    <a href="/"><img width:"50" src="images/logo.png"></a>
-
-    <center>
-    <h1>Stress</h1>
-
-    <p>{{phrase}}</p>
-
-      {% if phrase == "Get a massage." %}
-        <a href="http://massagenetwork.com/" target = "_blank">click here for massage link</a>
-      {% endif %}
-    <!--<form method='get' action='/stress'>
-      <input type='submit' value='Refresh'>
-    </form>-->
-  </center>
+    <a href="/"><img src="images/toucan.png"></a>
+    <div>
+      <h1>Stress</h1>
+        {% if phrase == "Get a massage." %}
+          <a href="http://massagenetwork.com/" target = "_blank">click here for massage link</a>
+        {% endif %}
+      <p>{{phrase}}</p>
+    </div>
 
   <a href="/"><img id="left" src="images/back_arrow.png"></a>
   <a href="/stress"><img id="refresh" src="images/refresh.png"></a>

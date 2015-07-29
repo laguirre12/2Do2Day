@@ -8,22 +8,18 @@
     <link href='/css/style.css' rel='stylesheet' type='text/css'>
     <script src="/js/ajax.js"></script> -->
   </head>
-  <body id='index'>
-    <a href="/"><img width:"50" src="images/logo.png"></a>
+  <body>
+    <a href="/"><img src="images/toucan.png"></a>
+    <div>
+      <h1>Music</h1>
+      {% if phrase=="Start singing for fun!" or phrase=="Try to learn how to play an instrument." %}
+        <p>{{phrase}}</p>
+      {% else %}
+        <p>(Our source for music genres can be found<a id="Link" href="http://www.musicgenreslist.com/" target="_blank"> here)</a></p>
+        <p>{{phrase}}</p>
+      {% endif %}
+    </div>
 
-    <center>
-    <h1>Music</h1>
-    {% if phrase=="Start singing for fun!" or phrase=="Try to learn how to play an instrument." %}
-      <p>{{phrase}}</p>
-    {% else %}
-      <p>(Our source for music genres can be found<a id="Link" href="http://www.musicgenreslist.com/" target="_blank"> here)</a></p>
-      <p>{{phrase}}</p>
-    {% endif %}
-
-    <!--<form method='get' action='/music'>
-      <input type='submit' value='Refresh'>
-    </form>-->
-  </center>
 
   <a href="/"><img id="left" src="images/back_arrow.png"></a>
   <a href="/music"><img id="refresh" src="images/refresh.png"></a>
