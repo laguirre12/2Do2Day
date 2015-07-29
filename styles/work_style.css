@@ -38,6 +38,12 @@
   color: black;
 }
 
+#index #Link{
+  text-decoration: underline;
+  color: blue;
+  bottom: 0px;
+}
+
 table{
   bottom: 0px;
 }

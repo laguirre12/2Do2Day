@@ -116,7 +116,12 @@ class SchoolHandler(webapp2.RequestHandler):
                  'Join a new type of club!',
                  'Explore the campus.',
                  "Talk to a teacher/professor you're unfamiliar with.",
-                 'Talk to a new student.']
+                 'Talk to a new student.',
+                 'Try high fiving one of your friends when they raise their hand to ask a question.',
+                 'Try getting a head start on the next lesson in class. (nerd.. Jk!)',
+                 'Ask as many questions as you can think (relating to the lesson) to your teacher.',
+                 'Try writting weekly schedules of what you have to do.',
+                 'Try doodling on your notes when you can, but still pay attention to the lesson.']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
@@ -128,7 +133,17 @@ class CrazyHandler(webapp2.RequestHandler):
                  'Climb a mountain.',
                  'Swim with dolphins.',
                  'Go bungee jumping!',
-                 'Do something crazy!!']
+                 'Do something crazy!!',
+                 'If your brave, try doing Shark cage diving.',
+                 'Go run on the Great Wall of China!!',
+                 'Start a conversation with a random person! (and be nice!!)',
+                 'Go to a concert and be determined to meet the artist.'
+                 'Go see the Great Pyramid of Giza!',
+                 'Dress up nice for no reason at all!',
+                 'Fly a kite??',
+                 'Go to the zoo!!!',
+                 'Take regular photos of yourself (possibly every day) for a year, and then watch how you changed!',
+                 'Watch Adam Sandler movies!!!']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
@@ -136,10 +151,18 @@ class ChillHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
         actions=['Read a book.',
-                 'Watch something on Netflix.',
+                 'Watch something on Netflix! (or Hulu or Amazon)',
                  'Get some ice (ba-dum-tss).',
                  'Go watch a movie.',
-                 'Do yoga.']
+                 'Do yoga.',
+                 'Eat some Ice Cream!! (frozen yogurt is also acceptable)',
+                 'If you can, try and ride a swing!',
+                 'Take a nap.',
+                 'Calmy ride a bike.',
+                 'Try experimenting with food in the kitchen.',
+                 'Go fishing.',
+                 'Go relax on a beach.',
+                 'Bowling??']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
