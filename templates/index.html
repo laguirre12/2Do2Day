@@ -3,33 +3,39 @@
   <head>
     <title>Today.</title>
     <link href="styles/style.css" rel="stylesheet" type="text/css">
-    <!-- <script src="/js/ajax.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/javascript/index_script.js"></script>
   </head>
 
   <body id='index'>
     <img src="images/toucan.png">
+    <div id="home" class="appear">
+      <table>
+        <tr>
+          <td onclick="location.href='work'">Work</td>
+          <td onclick="location.href='school'">School</td>
+          <td onclick="location.href='exercise'">Exercise</td>
+          <td onclick="location.href='home'">Stay Home</td>
+        </tr>
 
-    <table>
-      <tr>
-        <td onclick="location.href='work'">Work</td>
-        <td onclick="location.href='school'">School</td>
-        <td onclick="location.href='exercise'">Exercise</td>
-        <td onclick="location.href='home'">Stay Home</td>
-      </tr>
-
-      <tr>
-        <td onclick="location.href='music'">Listen to Music</td>
-        <td onclick="location.href='stress'">Stressed</td>
-        <td onclick="location.href='chill'">Just Chill</td>
-        <td onclick="location.href='crazy'">Something Crazy</td>
-      </tr>
-    </table>
-
+        <tr>
+          <td onclick="location.href='music'">Listen to Music</td>
+          <td onclick="location.href='stress'">Stressed</td>
+          <td onclick="location.href='chill'">Just Chill</td>
+          <td onclick="location.href='crazy'">Something Crazy</td>
+        </tr>
+      </table>
+      </div>
   </body>
 
+  <div id="about" class="hidden">
+    <h1> About</h1>
+    <p> this is some text </p>
+  </div>
+
   <ul id="unsorted_list">
-    <li class="List_item"><a class="bar" href="#" target="-_blank">Home</a></li>
-    <li class="List_item"><a class="bar" href="#" target="_blank">About</a></li>
-    <li class="List_item"><a class="bar" href="#" target="_blank">Contact</a></li>
+    <li class="List_item"><a class="bar" href="#" onclick="make_home_Appear()">Home</a></li>
+    <li class="List_item"><a class="bar" href="#" onclick="make_about_Appear()">About</a></li>
+    <li class="List_item"><a class="bar" href="#">Contact</a></li>
   </ul>
 </html>

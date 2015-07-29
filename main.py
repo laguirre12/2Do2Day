@@ -27,7 +27,7 @@ class WorkHandler(webapp2.RequestHandler):
                  "Make sure to say Hello and Goodbye to your coworkers when entering and leaving the office. (bonus points for smiling while doing that)",
                  "Go home! (After you finished your work :D )",
                  "Create a to-do list with realistic goals and tasks for you to perform.",
-                 "Keep track of what you do during the day. Now how much time it took for you to do the work.",
+                 "Keep track of what you do during the day and know how much time it took for you to do that work.",
                  "Take some time to learn more about the industry that you are working in."]
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
@@ -137,7 +137,7 @@ class CrazyHandler(webapp2.RequestHandler):
                  'If your brave, try doing Shark cage diving.',
                  'Go run on the Great Wall of China!!',
                  'Start a conversation with a random person! (and be nice!!)',
-                 'Go to a concert and be determined to meet the artist.'
+                 'Go to a concert and be determined to meet the artist.',
                  'Go see the Great Pyramid of Giza!',
                  'Dress up nice for no reason at all!',
                  'Fly a kite??',
