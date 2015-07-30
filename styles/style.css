@@ -59,6 +59,15 @@
   border: 2px rgb(251,175,63) solid;
   border-radius: 10px;
 }
+
+
+.angled {
+    /* Rotate div */
+    -ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+}
+
 /*--------------------------------------------------------------------*/
 #unsorted_list {
     list-style-type: none;

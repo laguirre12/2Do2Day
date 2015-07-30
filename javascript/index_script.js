@@ -20,8 +20,10 @@ $(document).ready(function(){
   pos = $("#work").position()
   $("#work").mouseover(function(){
       console.log("hello2");
-      /*$("#index table").animate({bottom: '150px'}); */
-      $("#work").animate({bottom: '15px'});
+      /*$("#index table").animate({bottom: '150px'});
+      $("#work").animate({left: '15px'});
+      $("#work").backgroundImage = "url('/images/exercise.png')";*/
+      $("#work").addClass("angled");
   });
 });
 
@@ -29,7 +31,9 @@ $(document).ready(function(){
   pos = $("#work").position()
   $("#work").mouseleave(function(){
       console.log("hello3");
-      /*$("#index table").animate({bottom: '100px'});*/
-      $("#work").animate({bottom: ("10px")});
+      /*$("#index table").animate({bottom: '100px'});
+      $("#work").animate({left: '10px'});
+      $("#work").backgroundImage = "url('/images/suitcase.png')";*/
+      $("#work").removeClass("angled");
   });
 });
