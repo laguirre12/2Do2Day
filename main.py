@@ -17,15 +17,15 @@ class WorkHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
         actions=["Go to lunch with a coworker that you're not familiar with and get to know them!",
                  "Compliment your coworkers!",
-                 "During your break, walk around the office.",
+                 "During your break, walk around the office. (slowly)",
                  "Organize your workspace.",
-                 "Remember to sit or stand up straight and not slouch as much as you can.",
+                 "Remember to sit or stand up straight and not slouch as much as you can! (that's an order)",
                  "Try meditating/relaxing by sitting still for 2-5 minutes during your break.",
                  "Go have an interesting conversation with your boss that is not about work.",
                  "Try to focus on your work by not using your phone/computer as much as you can.",
                  "Try reflecting on your day after work (or doing work) and evaluate your accomplishments.",
                  "Make sure to say Hello and Goodbye to your coworkers when entering and leaving the office. (bonus points for smiling while doing that)",
-                 "Go home! (After you finished your work :D )",
+                 "Go home! (After you finish your work :D )",
                  "Create a to-do list with realistic goals and tasks for you to perform.",
                  "Keep track of what you do during the day and know how much time it took for you to do that work.",
                  "Take some time to learn more about the industry that you are working in."]
@@ -35,7 +35,7 @@ class MusicHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('templates/music.html')
         actions=['Start singing for fun!',
-                 'Try to learn how to play an instrument.']
+                 'Try to learn how to play an instrument!']
         num=random.randint(0,10)
         if not (num==0 or num==1):
             genres=open("genre_file.txt","r")
@@ -63,14 +63,14 @@ class StressHandler(webapp2.RequestHandler):
                  'Pet a dog and/or a cat!',
                  'Make yourself a nice cup of tea.',
                  'Soak in a warm bath.',
-                 'Listen to music. (Have you tried or music section?)',
+                 'Listen to music! (Have you tried or music section?)',
                  'Go have a nice talk with a friend.',
                  'Talk out your problems to yourself.',
                  'Eat a nice healthy meal.',
                  'Try to read some jokes and laugh away your stress',
                  'Try keeping a stress journal where you write about your problems.',
                  'Try taking a short nap.',
-                 'Try doing an arts and crafts project.']
+                 'Try doing an arts and crafts project!']
         self.response.write(template.render({"phrase":actions[random.randint(0,len(actions)-1)]}))
 
 
