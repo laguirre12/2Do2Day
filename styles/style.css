@@ -99,6 +99,14 @@
   border: 2px rgb(251,175,63) solid;
   border-radius: 10px;
 }
+
+#crazy {
+  background-image: url('/images/crazy.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(238,60,91) solid;
+  border-radius: 10px;
+}
 /*--------------------------------------------------------------------*/
 #unsorted_list {
     list-style-type: none;
