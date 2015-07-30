@@ -87,6 +87,10 @@
     bottom: 0px;
 }
 
+#about {
+  background-color: rgb(255, 209, 117);
+
+}
 .List_item {
     float: left;
 }
@@ -112,7 +116,7 @@ a.bar:hover, a.bar:active {
 
 
 .hidden{
-  display : none;
+  display: none;
 }
 
 .left_angled {
