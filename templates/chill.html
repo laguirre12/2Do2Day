@@ -11,16 +11,17 @@
   <body>
 
     <a href="/"><img id='toucan' src="images/toucan.png"></a>
-    <p id="rule"> To see rules of posting your own suggestions see the 'About' page on the main page. </p> 
+    <p id="rule"> To see rules of posting your own suggestions see the 'About' page on the main page. </p>
     <form method="post" action="/chill">
       <p> Suggest your own action for consideration:<input type="text" name="suggestion"><input type="submit"></p>
     </form>
 
     <div>
       <h1>Just Chillin'</h1>
-      <p>{{phrase}}</p>
-        {% if phrase == "Watch something on Netflix." %}
-          <a href="https://www.netflix.com/" target = "_blank">click here for Netflix link</a>
+        {% if phrase == "Watch something on Netflix! (or Hulu, Amazon, HBO, etc.)" %}
+          <p>{{phrase}} (click here to go checkout <a id="Link" href="https://www.netflix.com/" target = "_blank">Netflix</a>)</p>
+        {% else %}
+          <p>{{phrase}}</p>
         {% endif %}
       <a href="/chill"><img id="refresh" src="images/refresh.png"></a>
     </div>

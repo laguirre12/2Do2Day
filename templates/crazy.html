@@ -7,7 +7,7 @@
   <body>
 
     <a href="/"><img id='toucan' src="images/toucan.png"></a>
-    <p id="rule"> To see rules of posting your own suggestions see the 'About' page on the main page. </p> 
+    <p id="rule"> To see rules of posting your own suggestions see the 'About' page on the main page. </p>
     <form method="post" action="/crazy">
       <p> Suggest your own action for consideration:<input type="text" name="suggestion"><input type="submit"></p>
     </form>
@@ -16,7 +16,7 @@
       <h1>Something Crazy</h1>
       {% if phrase== 'Go skydiving!' %}
         <p>{{phrase}} (check <a id="Link" href="http://www.skydiving.com/" target="_blank">here</a> for more information)</p>
-      {% elif phrase== 'Take a hike.' %}
+      {% elif phrase== 'Go on a hike.' %}
         <p>{{phrase}} (check <a id="Link" href="http://www.americanhiking.org/" target="_blank">here</a> for more information)</p>
       {% elif phrase== 'Swim with dolphins.' %}
         <p>{{phrase}} (check <a id="Link" href="http://www.minitime.com/trip-tips/6-Places-to-Swim-with-Dolphins-article" target="_blank">here</a> for more information)</p>
@@ -25,7 +25,7 @@
       {% elif phrase== 'Go to a concert and be determined to meet the artist.' %}
         <p>{{phrase}} (check <a id="Link" href="http://www.ticketmaster.com/" target = "_blank">here</a> for ticketmaster's website)</p>
 
-      {% elif phrase== 'If your brave, try doing Shark cage diving.' %}
+      {% elif phrase== "If you're brave, try Shark cage diving." %}
         <p>{{phrase}} (check <a id="Link" href="http://www.sharkcagediving.net/" target="_blank">here</a> for more information)</p>
       {% elif phrase== 'Go run on the Great Wall of China!!' %}
         <p>{{phrase}} (check <a id="Link" href="http://www.travelchinaguide.com/china_great_wall/" target="_blank">here</a> for more information)</p>
