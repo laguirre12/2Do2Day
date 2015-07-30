@@ -15,60 +15,113 @@ function make_about_Appear()
 };
 
 
+/* -------------  makes work tilt on mouseover  ---------------------- */
+
 $(document).ready(function(){
-  pos = $("#work").position()
   $("#work").mouseover(function(){
       $("#work").addClass("left_angled");
   });
 });
 
 $(document).ready(function(){
-  pos = $("#work").position()
   $("#work").mouseleave(function(){
       $("#work").removeClass("left_angled");
   });
 });
 
+/* -------------  makes school tilt on mouseover  ---------------------- */
+
 $(document).ready(function(){
-  pos = $("#school").position()
   $("#school").mouseover(function(){
       $("#school").addClass("right_angled");
   });
 });
 
 $(document).ready(function(){
-  pos = $("#school").position()
   $("#school").mouseleave(function(){
       $("#school").removeClass("right_angled");
   });
 });
 
 
-/* -------------------------------------------------------- */
+/* -------------  makes exercise tilt on mouseover  ---------------------- */
 $(document).ready(function(){
-  pos = $("#exercise").position()
   $("#exercise").mouseover(function(){
       $("#exercise").addClass("left_angled");
   });
 });
 
 $(document).ready(function(){
-  pos = $("#exercise").position()
   $("#exercise").mouseleave(function(){
       $("#exercise").removeClass("left_angled");
   });
 });
 
+/* -------------  makes stay_home tilt on mouseover  ---------------------- */
 $(document).ready(function(){
-  pos = $("#stay_home").position()
   $("#stay_home").mouseover(function(){
       $("#stay_home").addClass("right_angled");
   });
 });
 
 $(document).ready(function(){
-  pos = $("#stay_home").position()
   $("#stay_home").mouseleave(function(){
       $("#stay_home").removeClass("right_angled");
+  });
+});
+
+
+/* -------------  makes music tilt on mouseover  ---------------------- */
+$(document).ready(function(){
+  $("#music").mouseover(function(){
+      $("#music").addClass("right_angled");
+  });
+});
+
+$(document).ready(function(){
+  $("#music").mouseleave(function(){
+      $("#music").removeClass("right_angled");
+  });
+});
+
+
+/* -------------  makes stress tilt on mouseover  ---------------------- */
+$(document).ready(function(){
+  $("#stress").mouseover(function(){
+      $("#stress").addClass("left_angled");
+  });
+});
+
+$(document).ready(function(){
+  $("#stress").mouseleave(function(){
+      $("#stress").removeClass("left_angled");
+  });
+});
+
+
+/* -------------  makes chill tilt on mouseover  ---------------------- */
+$(document).ready(function(){
+  $("#chill").mouseover(function(){
+      $("#chill").addClass("right_angled");
+  });
+});
+
+$(document).ready(function(){
+  $("#chill").mouseleave(function(){
+      $("#chill").removeClass("right_angled");
+  });
+});
+
+
+/* -------------  makes crazy tilt on mouseover  ---------------------- */
+$(document).ready(function(){
+  $("#crazy").mouseover(function(){
+      $("#crazy").addClass("left_angled");
+  });
+});
+
+$(document).ready(function(){
+  $("#crazy").mouseleave(function(){
+      $("#crazy").removeClass("left_angled");
   });
 });
