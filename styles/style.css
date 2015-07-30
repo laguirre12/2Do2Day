@@ -115,10 +115,6 @@ a.bar:hover, a.bar:active {
   display: none;
 }
 
-.appear{
-  display : inline;
-}
-
 .left_angled {
     /* Rotate div */
     -ms-transform: rotate(-7deg); /* IE 9 */

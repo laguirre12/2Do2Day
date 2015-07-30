@@ -116,8 +116,12 @@ class WorkHandler(webapp2.RequestHandler):
 
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
-        _actions[0].append(self.request.get("suggestion"))
-        self.response.write(template.render({"phrase":self.request.get("suggestion")}))
+        if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
+            or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
+            self.get();
+        else:
+            _actions[0].append(self.request.get("suggestion"))
+            self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 class MusicHandler(webapp2.RequestHandler):
     def get(self):
@@ -142,8 +146,12 @@ class MusicHandler(webapp2.RequestHandler):
             self.response.write(template.render({"phrase":_actions[1][random.randint(0,len(_actions[1])-1)],"number":0}))
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/music.html')
-        _actions[1].append(self.request.get("suggestion"))
-        self.response.write(template.render({"phrase":self.request.get("suggestion"),"number":0}))
+        if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
+            or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
+            self.get();
+        else:
+            _actions[1].append(self.request.get("suggestion"))
+            self.response.write(template.render({"phrase":self.request.get("suggestion"),"number":0}))
 
 class StressHandler(webapp2.RequestHandler):
     def get(self):
@@ -151,8 +159,12 @@ class StressHandler(webapp2.RequestHandler):
         self.response.write(template.render({"phrase":_actions[2][random.randint(0,len(_actions[2])-1)]}))
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/stress.html')
-        _actions[2].append(self.request.get("suggestion"))
-        self.response.write(template.render({"phrase":self.request.get("suggestion")}))
+        if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
+            or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
+            self.get();
+        else:
+            _actions[2].append(self.request.get("suggestion"))
+            self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 
 class HomeHandler(webapp2.RequestHandler):
@@ -161,8 +173,12 @@ class HomeHandler(webapp2.RequestHandler):
         self.response.write(template.render({"phrase":_actions[3][random.randint(0,len(_actions[3])-1)]}))
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/home.html')
-        _actions[3].append(self.request.get("suggestion"))
-        self.response.write(template.render({"phrase":self.request.get("suggestion")}))
+        if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
+            or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
+            self.get();
+        else:
+            _actions[3].append(self.request.get("suggestion"))
+            self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 class ExerciseHandler(webapp2.RequestHandler):
     def get(self):
@@ -170,8 +186,12 @@ class ExerciseHandler(webapp2.RequestHandler):
         self.response.write(template.render({"phrase":_actions[4][random.randint(0,len(_actions[4])-1)]}))
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/exercise.html')
-        _actions[4].append(self.request.get("suggestion"))
-        self.response.write(template.render({"phrase":self.request.get("suggestion")}))
+        if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
+            or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
+            self.get();
+        else:
+            _actions[4].append(self.request.get("suggestion"))
+            self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 
 class SchoolHandler(webapp2.RequestHandler):
@@ -180,8 +200,12 @@ class SchoolHandler(webapp2.RequestHandler):
         self.response.write(template.render({"phrase":_actions[5][random.randint(0,len(_actions[5])-1)]}))
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/school.html')
-        _actions[5].append(self.request.get("suggestion"))
-        self.response.write(template.render({"phrase":self.request.get("suggestion")}))
+        if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
+            or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
+            self.get();
+        else:
+            _actions[5].append(self.request.get("suggestion"))
+            self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 
 class CrazyHandler(webapp2.RequestHandler):
@@ -190,8 +214,12 @@ class CrazyHandler(webapp2.RequestHandler):
         self.response.write(template.render({"phrase":_actions[6][random.randint(0,len(_actions[6])-1)]}))
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/crazy.html')
-        _actions[6].append(self.request.get("suggestion"))
-        self.response.write(template.render({"phrase":self.request.get("suggestion")}))
+        if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
+            or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
+            self.get();
+        else:
+            _actions[6].append(self.request.get("suggestion"))
+            self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 
 class ChillHandler(webapp2.RequestHandler):
@@ -200,8 +228,12 @@ class ChillHandler(webapp2.RequestHandler):
         self.response.write(template.render({"phrase":_actions[7][random.randint(0,len(_actions[7])-1)]}))
     def post(self):
         template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
-        _actions[7].append(self.request.get("suggestion"))
-        self.response.write(template.render({"phrase":self.request.get("suggestion")}))
+        if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
+            or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
+            self.get();
+        else:
+            _actions[7].append(self.request.get("suggestion"))
+            self.response.write(template.render({"phrase":self.request.get("suggestion").strip()}))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
