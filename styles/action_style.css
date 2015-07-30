@@ -37,6 +37,12 @@ div{
   background-color: rgb(255, 209, 117);
 }
 
+#rule{
+  font-size:12px;
+  text-align: center;
+  line-height: 1px;
+}
+
 h1 {
   margin: 25px;
   font-family: 'Lato', serif;

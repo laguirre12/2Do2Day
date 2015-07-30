@@ -10,15 +10,20 @@
   </head>
   <body>
     <a href="/"><img id='toucan' src="images/toucan.png"></a>
+    <p id="rule"> To see rules of posting your own suggestions see the 'About' page on the main page. </p> 
+    <form method="post" action="/music">
+      <p> Suggest your own action for consideration:<input type="text" name="suggestion"><input type="submit"></p>
+    </form>
+
     <div>
       <h1>Music</h1>
-      {% if phrase=="Start singing for fun!" or phrase=="Try to learn how to play an instrument." %}
-        <p>{{phrase}}</p>
-      {% else %}
+      {% if number>3 %}
         <p>(Our source for music genres can be found<a id="Link" href="http://www.musicgenreslist.com/" target="_blank"> here)</a></p>
         <p>{{phrase}}</p>
+      {% else %}
+        <p>{{phrase}}</p>
       {% endif %}
-      <a href="/work"><img id="refresh" src="images/refresh.png"></a>
+      <a href="/music"><img id="refresh" src="images/refresh.png"></a>
     </div>
 
     <a href="/"><img id="left" src="images/back_arrow.png"></a>
