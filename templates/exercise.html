@@ -11,6 +11,12 @@
   <body>
 
     <a href="/"><img id='toucan' src="images/toucan.png"></a>
+
+    <form method="post" action="/exercise">
+      <p> Suggest your own action for consideration:<input type="text" name="suggestion"></p>
+      <input type="submit">
+    </form>
+
     <div>
       <h1>Exercise</h1>
         {% if phrase == 'Watch some workout motivation videos on ' %}

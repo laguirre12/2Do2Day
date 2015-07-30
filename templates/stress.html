@@ -11,13 +11,20 @@
   <body>
 
     <a href="/"><img id='toucan' src="images/toucan.png"></a>
+
+    <form method="post" action="/stress">
+      <p> Suggest your own action for consideration:<input type="text" name="suggestion"></p>
+      <input type="submit">
+    </form>
+
     <div>
       <h1>Stress</h1>
         {% if phrase == "Get a massage." %}
-          <a href="http://massagenetwork.com/" target = "_blank">click here for massage link</a>
+          <p>{{phrase}} (check <a id="Link" href="http://massagenetwork.com/" target = "_blank">here</a> for more information)</p>
+        {% else %}
+          <p>{{phrase}}</p>
         {% endif %}
-      <p>{{phrase}}</p>
-      <a href="/school"><img id="refresh" src="images/refresh.png"></a>
+      <a href="/stress"><img id="refresh" src="images/refresh.png"></a>
     </div>
 
     <a href="/"><img id="left" src="images/back_arrow.png"></a>

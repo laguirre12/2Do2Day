@@ -69,13 +69,6 @@
   border-radius: 10px;
 }
 
-.angled {
-    /* Rotate div */
-    -ms-transform: rotate(-7deg); /* IE 9 */
-    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
-    transform: rotate(-7deg);
-}
-
 #stay_home {
   background-image: url('/images/home.png');
   background-position: center;
@@ -124,4 +117,18 @@ a.bar:hover, a.bar:active {
 
 .appear{
   display : inline;
+}
+
+.left_angled {
+    /* Rotate div */
+    -ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+}
+
+.right_angled {
+    /* Rotate div */
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
 }
