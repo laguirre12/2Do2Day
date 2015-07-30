@@ -20,6 +20,7 @@
   font-size: 25px;
   table-layout: fixed;
   border-spacing: 20px;
+  color: white;
 }
 
 #index td {
@@ -52,6 +53,14 @@
   border-radius: 10px;
 }
 
+#school {
+  background-image: url('/images/school.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(126,93,136) solid;
+  border-radius: 10px;
+}
+
 #exercise {
   background-image: url('/images/exercise.png');
   background-position: center;
@@ -60,7 +69,6 @@
   border-radius: 10px;
 }
 
-
 .angled {
     /* Rotate div */
     -ms-transform: rotate(-7deg); /* IE 9 */
@@ -68,6 +76,13 @@
     transform: rotate(-7deg);
 }
 
+#stay_home {
+  background-image: url('/images/home.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(140,198,62) solid;
+  border-radius: 10px;
+}
 /*--------------------------------------------------------------------*/
 #unsorted_list {
     list-style-type: none;
