@@ -11,13 +11,19 @@
   <body>
 
     <a href="/"><img id='toucan' src="images/toucan.png"></a>
+
+    <form method="post" action="/chill">
+      <p> Suggest your own action for consideration:<input type="text" name="suggestion"></p>
+      <input type="submit">
+    </form>
+
     <div>
       <h1>Just Chillin'</h1>
       <p>{{phrase}}</p>
         {% if phrase == "Watch something on Netflix." %}
           <a href="https://www.netflix.com/" target = "_blank">click here for Netflix link</a>
         {% endif %}
-      <a href="/work"><img id="refresh" src="images/refresh.png"></a>
+      <a href="/chill"><img id="refresh" src="images/refresh.png"></a>
     </div>
 
     <a href="/"><img id="left" src="images/back_arrow.png"></a>
