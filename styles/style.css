@@ -122,12 +122,21 @@
 }
 
 #about {
+  position: relative;
   background-color: rgb(255, 209, 117);
-  padding-left: 12px;
-  padding-bottom: 12px;
-  padding-right: 12px;
-  padding-top: 10px;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 80%;
+  left: 10%;
+  margin-top: 2%;
 }
+#about h1 {
+  text-align: center;
+  margin: 0px;
+}
+
 .List_item {
     float: left;
 }
