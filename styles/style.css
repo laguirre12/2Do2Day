@@ -113,7 +113,10 @@
 
 #about {
   background-color: rgb(255, 209, 117);
-
+  padding-left: 12px;
+  padding-bottom: 12px;
+  padding-right: 12px;
+  padding-top: 10px;
 }
 .List_item {
     float: left;
@@ -157,5 +160,5 @@ a.bar:hover, a.bar:active {
     transform: rotate(7deg);
 }
  #rules{
-   padding-left: 25px;
+   padding-left: 30px;
  }
