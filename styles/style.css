@@ -135,8 +135,3 @@ a.bar:hover, a.bar:active {
  #rules{
    padding-left: 25px;
  }
-
- #about{
-   font-weight: bold;
-   border: 5px black solid;
- }
