@@ -79,6 +79,11 @@ td {
   background-color: rgb(255, 209, 117);
 }
 
+#menu td:hover{
+  cursor: pointer;
+  border-color: white;
+}
+
 a:link{
   text-decoration: none;
   color: black;
@@ -162,14 +167,4 @@ form {
   background-size: cover;
   border: 2px rgb(238,60,91) solid;
   border-radius: 10px;
-}
-
-td:hover{
-  cursor: pointer;
-  border-color: white;
-}
-
-#contact {
-  width: 60%;
-  left: 20%;
 }

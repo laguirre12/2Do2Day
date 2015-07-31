@@ -195,3 +195,22 @@ a.bar:hover, a.bar:active {
  #rules{
    padding-left: 30px;
  }
+
+#contact table{
+  position: absolute;
+  width: 80%;
+  left: 10%;
+}
+
+#contact td {
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(255, 209, 117);
+  border-radius: 10px;
+  cursor: default;
+}
+
+#contact h1 {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
