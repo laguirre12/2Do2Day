@@ -20,9 +20,10 @@ body {
 }
 
 #refresh{
-  position: relative;
-  width: 5%;
-  left: 0%;
+  position: absolute;
+  width: 6%;
+  left: 47%;
+  bottom: 10%;
 }
 
 div{
