@@ -4,9 +4,32 @@ import jinja2
 import random
 import logging
 from google.appengine.ext import ndb
+from google.appengine.ext import db
+import pickle
 
-_actions=[]
-_actions.append(["Go to lunch with a coworker that you're not familiar with and get to know them!",
+
+class GenericListProperty(db.Property):
+  data_type = db.Blob
+
+  def validate(self, value):
+    if type(value) is not list:
+      raise db.BadValueError('Property %s must be a list, not %s.' % (self.name, type(value), value))
+    return value
+
+  def get_value_for_datastore(self, model_instance):
+    return db.Blob(pickle.dumps(getattr(model_instance,self.name)))
+
+  def make_value_from_datastore(self, value):
+    return pickle.loads(value)
+
+class List_of_actions(db.Model):
+    name = db.StringProperty(required=True)
+    lst = GenericListProperty()
+    date = db.DateTimeProperty(auto_now_add=True)
+
+actions = List_of_actions(name = "actions", lst = [])
+
+actions.lst.append(["Go to lunch with a coworker that you're not familiar with and get to know them!",
          "Compliment your coworkers!",
          "During your break, walk around the office. (slowly)",
          "Organize your workspace.",
@@ -20,10 +43,10 @@ _actions.append(["Go to lunch with a coworker that you're not familiar with and 
          "Keep track of what you do during the day and know how much time it took for you to do that work.",
          "Take some time to learn more about the industry that you are working in."])
 
-_actions.append(['Start singing for fun!',
+actions.lst.append(['Start singing for fun!',
          'Try to learn how to play an instrument!'])
 
-_actions.append(['Get a massage.',
+actions.lst.append(['Get a massage.',
                  'Go for a run.',
                  'Pet a dog and/or a cat!',
                  'Make yourself a nice cup of tea.',
@@ -36,7 +59,7 @@ _actions.append(['Get a massage.',
                  'Try keeping a stress journal where you write about your problems.',
                  'Take a short nap.',
                  'Do an arts and crafts project!'])
-_actions.append(['Make a fort out of your cushions, pillows, and blankets! (bonus points for getting friends to help you!!)',
+actions.lst.append(['Make a fort out of your cushions, pillows, and blankets! (bonus points for getting friends to help you!!)',
          'Take a nap!',
          'Call a friend.',
          'Text a good friend a message backwards (ex: "elpmaxe") and see how long it takes for them to decode the message.',
@@ -48,7 +71,7 @@ _actions.append(['Make a fort out of your cushions, pillows, and blankets! (bonu
          'Read a book! (JK watch a movie instead)',
          'Watch cute cat videos on ',
          'Bake Cookies! (props for sharing them with friends)'])
-_actions.append(['Get a friend to be your work out parter so you can both motivate each other.',
+actions.lst.append(['Get a friend to be your work out parter so you can both motivate each other.',
          'Make yourself a protein shake!',
          'Try playing a sport with your friends regularly so you have more motivation for working out.',
          'If you are used to exercising in a gym, try exercising outside the gym for a change (or vise versa).',
@@ -58,7 +81,7 @@ _actions.append(['Get a friend to be your work out parter so you can both motiva
          'Try not listening to music while exercising in order to focus on your form.',
          'Join a workout class or an exercise group.',
          'Watch some workout motivation videos on '])
-_actions.append(['Make a study group with your friends.',
+actions.lst.append(['Make a study group with your friends.',
          'Join a new type of club!',
          'Explore the campus.',
          "Talk to a teacher/professor you're unfamiliar with.",
@@ -67,7 +90,7 @@ _actions.append(['Make a study group with your friends.',
          'Try getting a head start on the next lesson in class. (be a nerd!)',
          'Write weekly schedules of what you have to do.',
          'Doodle on your notes. Become an artist.'])
-_actions.append(['Go skydiving!',
+actions.lst.append(['Go skydiving!',
          'Go on a hike.',
          'Climb a mountain.',
          'Swim with dolphins.',
@@ -83,7 +106,7 @@ _actions.append(['Go skydiving!',
          'Take regular photos of yourself (possibly every day) for a year, and then watch how you changed!',
          'Watch Adam Sandler movies!!!'])
 
-_actions.append(['Read a book.',
+actions.lst.append(['Read a book.',
          'Watch something on Netflix! (or Hulu, Amazon, HBO, etc.)',
          'Get some ice (ba-dum-tss).',
          'Go watch a movie.',
@@ -96,6 +119,11 @@ _actions.append(['Read a book.',
          'Go fishing.',
          'Go relax on a beach.',
          'Bowling??'])
+actions_key = actions.put()
+#db.delete(actions)
+#actions.lst.append(["more stuff"])
+#actions_key= actions.put()
+
 
 JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -106,20 +134,28 @@ class MainHandler(webapp2.RequestHandler):
 
 class WorkHandler(webapp2.RequestHandler):
     def get(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
-        self.response.write(template.render({"phrase":_actions[0][random.randint(0,len(_actions[0])-1)]}))
+        self.response.write(template.render({"phrase":actions.lst[0][random.randint(0,len(actions.lst[0])-1)]}))
 
     def post(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
         if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
             or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
             self.get();
         else:
-            _actions[0].append(self.request.get("suggestion"))
+            db.delete(actions)
+            actions.lst[0].append(self.request.get("suggestion"))
+            actions_key = actions.put()
             self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 class MusicHandler(webapp2.RequestHandler):
     def get(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/music.html')
         num=random.randint(0,10)
         logging.info(num)
@@ -138,97 +174,140 @@ class MusicHandler(webapp2.RequestHandler):
                 "phrase": 'Listen to J-Pop'+" music!","number":num
                 }))
         else:
-            self.response.write(template.render({"phrase":_actions[1][random.randint(0,len(_actions[1])-1)],"number":0}))
+            self.response.write(template.render({"phrase":actions.lst[1][random.randint(0,len(actions.lst[1])-1)],"number":0}))
     def post(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/music.html')
         if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
             or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
             self.get();
         else:
-            _actions[1].append(self.request.get("suggestion"))
-            self.response.write(template.render({"phrase":self.request.get("suggestion"),"number":0}))
+            db.delete(actions)
+            actions.lst[1].append(self.request.get("suggestion"))
+            actions_key = actions.put()
+            self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 class StressHandler(webapp2.RequestHandler):
     def get(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/stress.html')
-        self.response.write(template.render({"phrase":_actions[2][random.randint(0,len(_actions[2])-1)]}))
+        self.response.write(template.render({"phrase":actions.lst[2][random.randint(0,len(actions.lst[2])-1)]}))
     def post(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/stress.html')
         if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
             or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
             self.get();
         else:
-            _actions[2].append(self.request.get("suggestion"))
+            db.delete(actions)
+            actions.lst[2].append(self.request.get("suggestion"))
+            actions_key = actions.put()
             self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 
 class HomeHandler(webapp2.RequestHandler):
     def get(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/home.html')
-        self.response.write(template.render({"phrase":_actions[3][random.randint(0,len(_actions[3])-1)]}))
+        self.response.write(template.render({"phrase":actions.lst[3][random.randint(0,len(actions.lst[3])-1)]}))
     def post(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/home.html')
         if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
             or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
             self.get();
         else:
-            _actions[3].append(self.request.get("suggestion"))
+            db.delete(actions)
+            actions.lst[3].append(self.request.get("suggestion"))
+            actions_key = actions.put()
             self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 class ExerciseHandler(webapp2.RequestHandler):
     def get(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/exercise.html')
-        self.response.write(template.render({"phrase":_actions[4][random.randint(0,len(_actions[4])-1)]}))
+        self.response.write(template.render({"phrase":actions.lst[4][random.randint(0,len(actions.lst[4])-1)]}))
     def post(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/exercise.html')
         if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
             or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
             self.get();
         else:
-            _actions[4].append(self.request.get("suggestion"))
+            db.delete(actions)
+            actions.lst[4].append(self.request.get("suggestion"))
+            actions_key = actions.put()
             self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 
 class SchoolHandler(webapp2.RequestHandler):
     def get(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/school.html')
-        self.response.write(template.render({"phrase":_actions[5][random.randint(0,len(_actions[5])-1)]}))
+        self.response.write(template.render({"phrase":actions.lst[5][random.randint(0,len(actions.lst[5])-1)]}))
     def post(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/school.html')
         if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
             or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
             self.get();
         else:
-            _actions[5].append(self.request.get("suggestion"))
+            db.delete(actions)
+            actions.lst[5].append(self.request.get("suggestion"))
+            actions_key = actions.put()
             self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 
 class CrazyHandler(webapp2.RequestHandler):
     def get(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/crazy.html')
-        self.response.write(template.render({"phrase":_actions[6][random.randint(0,len(_actions[6])-1)]}))
+        self.response.write(template.render({"phrase":actions.lst[6][random.randint(0,len(actions.lst[6])-1)]}))
     def post(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/crazy.html')
         if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
             or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
             self.get();
         else:
-            _actions[6].append(self.request.get("suggestion"))
+            db.delete(actions)
+            actions.lst[6].append(self.request.get("suggestion"))
+            actions_key = actions.put()
             self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 
 class ChillHandler(webapp2.RequestHandler):
     def get(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
-        self.response.write(template.render({"phrase":_actions[7][random.randint(0,len(_actions[7])-1)]}))
+        self.response.write(template.render({"phrase":actions.lst[7][random.randint(0,len(actions.lst[7])-1)]}))
     def post(self):
+        global actions_key
+        global actions
         template = JINJA_ENVIRONMENT.get_template('templates/chill.html')
         if ("{" in self.request.get("suggestion") or self.request.get("suggestion")=="" or self.request.get("suggestion").isspace() or "*" in self.request.get("suggestion") or "<" in self.request.get("suggestion")
             or ">" in self.request.get("suggestion") or "@" in self.request.get("suggestion") or "}" in self.request.get("suggestion") ):
             self.get();
         else:
-            _actions[7].append(self.request.get("suggestion"))
-            self.response.write(template.render({"phrase":self.request.get("suggestion").strip()}))
+            logging.info(db.get(actions_key).lst[7])
+            db.delete(actions)
+            actions.lst[7].append(self.request.get("suggestion"))
+            actions_key = actions.put()
+            logging.info(actions.date)
+            logging.info(db.get(actions_key).lst[7])
+            self.response.write(template.render({"phrase":self.request.get("suggestion")}))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
