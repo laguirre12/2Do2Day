@@ -72,14 +72,14 @@ table{
   height: 13%;
   font-size: 20px;
   font-family: 'Lato', sans-serif;
+  border-spacing: 10px;
 }
 
 td {
   background-color: rgb(255, 209, 117);
-  border-radius: 50%;
 }
 
-td:hover{
+#menu td:hover{
   cursor: pointer;
   border-color: white;
 }
@@ -97,6 +97,74 @@ a:visited{
 
 #Link{
   text-decoration: underline;
-  color: blue;
+  color: rgb(0,174,239);
   bottom: 0px;
+}
+
+form {
+  text-align: center;
+}
+
+#work {
+  background-image: url('/images/suitcase.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(0,167,157) solid;
+  border-radius: 10px;
+}
+
+#school {
+  background-image: url('/images/school.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(126,93,136) solid;
+  border-radius: 10px;
+}
+
+#exercise {
+  background-image: url('/images/exercise.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(255,203,4) solid;
+  border-radius: 10px;
+}
+
+#home {
+  background-image: url('/images/home.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(140,198,62) solid;
+  border-radius: 10px;
+}
+
+#music {
+  background-image: url('/images/music.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(27,117,187) solid;
+  border-radius: 10px;
+}
+
+#stress {
+  background-image: url('/images/stress.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(251,175,63) solid;
+  border-radius: 10px;
+}
+
+#chill {
+  background-image: url('/images/chill.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(104,165,207) solid;
+  border-radius: 10px;
+}
+
+#crazy {
+  background-image: url('/images/crazy.png');
+  background-position: center;
+  background-size: cover;
+  border: 2px rgb(238,60,91) solid;
+  border-radius: 10px;
 }
